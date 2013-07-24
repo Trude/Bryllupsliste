@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -24,7 +25,11 @@ public class BryllupServlet extends HttpServlet {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Server server = new Server(Integer.valueOf(System.getenv("PORT")));
+		String portString = System.getenv("PORT");
+		System.out.println("P: " + portString);
+		String nyPortString = portString == null ? "5000" : portString;
+		System.out.println("NP: " + nyPortString);
+		Server server = new Server(Integer.valueOf(nyPortString));
 		ServletContextHandler context = new ServletContextHandler(
 				ServletContextHandler.SESSIONS);
 		context.setContextPath("/");
