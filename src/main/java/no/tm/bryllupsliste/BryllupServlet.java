@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
+import org.eclipse.jetty.webapp.WebAppContext;
 
 public class BryllupServlet extends HttpServlet {
 
@@ -26,17 +27,23 @@ public class BryllupServlet extends HttpServlet {
 
 	public static void main(String[] args) throws Exception {
 		String portString = System.getenv("PORT");
-		System.out.println("P: " + portString);
 		String nyPortString = portString == null ? "5000" : portString;
-		System.out.println("NP: " + nyPortString);
 		Server server = new Server(Integer.valueOf(nyPortString));
-		ServletContextHandler context = new ServletContextHandler(
-				ServletContextHandler.SESSIONS);
-		context.setContextPath("/");
-		server.setHandler(context);
-		context.addServlet(new ServletHolder(new BryllupServlet()), "/*");
+//		ServletContextHandler context = new ServletContextHandler(
+//				ServletContextHandler.SESSIONS);
+//		context.setContextPath("/");
+//		server.setHandler(context);
+//		context.addServlet(new ServletHolder(new BryllupServlet()), "/*");
+//		server.start();
+//		server.join();
+//		
+		
+		
+		server.setHandler(new WebAppContext("src/main/webapp", "/"));
 		server.start();
-		server.join();
+		System.out.println("http://localhost:8080/");
 	}
+	
+
 
 }
