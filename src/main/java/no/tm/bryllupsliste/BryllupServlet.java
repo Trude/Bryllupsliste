@@ -20,7 +20,7 @@ public class BryllupServlet extends HttpServlet {
 		resp.setContentType("text/html");
 		PrintWriter writer = resp.getWriter();
 
-		writer.append("<html><body>").append("<h1>Hello from servlet</h1>")
+		writer.append("<html><body>").append("<h1>Bryllupsliste!</h1>")
 				.append("</body></html>");
 	}
 
