@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.servlet.ServletContextHandler;
-import org.eclipse.jetty.servlet.ServletHolder;
+//import org.eclipse.jetty.servlet.ServletContextHandler;
+//import org.eclipse.jetty.servlet.ServletHolder;
 import org.eclipse.jetty.webapp.WebAppContext;
 
 public class BryllupServlet extends HttpServlet {
@@ -37,11 +37,8 @@ public class BryllupServlet extends HttpServlet {
 //		server.start();
 //		server.join();
 //		
-		
-		
 		server.setHandler(new WebAppContext("src/main/webapp", "/"));
 		server.start();
-		System.out.println("http://localhost:8080/");
 	}
 	
 
