@@ -1,42 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
-	<title>Bryllupsliste</title>
-	<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-	<script src="js/bootstrap.js"></script>
+<title>Bryllupsliste</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+<script src="js/bootstrap.js"></script>
+<script src="js/angular.min.js"></script>
 </head>
 <body>
-   <!--  <h1>Hello World!</h1>
+	<!--  <h1>Hello World!</h1>
     Say hello to <a href="bryllup/hello.html">servlet</a> -->
-    
-    <div class="container">
 
-      <div class="masthead">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Hjem</a></li>
-          <li><a href="#">Om</a></li>
-          <li><a href="#">Kontakt</a></li>
-        </ul>
-        <h3 class="muted">Bryllupsliste</h3>
-      </div>
+	<div class="container">
 
-      <hr>
+		<div class="masthead">
+			<ul class="nav nav-pills pull-right">
+				<li class="active"><a href="#">Hjem</a></li>
+				<li><a href="#">Om</a></li>
+				<li><a href="#">Kontakt</a></li>
+			</ul>
+			<h3 class="muted">Bryllupsliste</h3>
+		</div>
 
-      <div>
-        <h1>Ønskeliste</h1>
-        <table class="table table-striped">
-        <tr><th>Beskrivelse</th><th>Produktid</th><th>Pris</th></tr>
-        <tr><td>Kjøkkenmaskin</td><td>1234</td><td>123,-</td></tr>
-        </table>
-      </div>
+		<hr>
 
-      <hr>
+		<div>
+			<h1>Ønskeliste</h1>
+			<table class="table table-striped">
+				<tr>
+					<th>Beskrivelse</th>
+					<th>Produktid</th>
+					<th>Pris</th>
+				</tr>
+				<tr>
+					<td>Kjøkkenmaskin</td>
+					<td>1234</td>
+					<td>123,-</td>
+				</tr>
+			</table>
+		</div>
+		<hr>
 
-      <div class="footer">
-        <p>&copy; Trude</p>
-      </div>
+		<label>Name:</label> <input type="text" ng-model="yourName"
+			placeholder="Enter a name here">
+		<hr>
+		<h1>Hello {{yourName}}!</h1>
 
-    </div> <!-- /container -->
-    
+		<hr>
+
+		<div class="footer">
+			<p>&copy; Trude</p>
+		</div>
+
+	</div>
+	<!-- /container -->
+
 </body>
 </html>
